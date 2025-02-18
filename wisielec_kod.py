@@ -18,17 +18,45 @@ Podajemy hasło w konsoli, a program wymazuje je z konsoli i zamiast niego wyśw
 """
 
 haslo = 'masło'
-slowo = ''
+litery = list(haslo)
+print(litery)
+newhaslo = []
 
 for i in range(len(haslo)):
-    slowo+='-'
-print(slowo)
+    newhaslo.append('-')
+print(newhaslo)
 
 litera = input('wpisz litere: ')
-if litera in haslo:
-    print('tak')
-else:
-    print('nie')
+for l in litery:
+    if litera == l:
+        newhaslo.append(litera)
+        print(newhaslo)
+    else:
+        print('-')
+
+
+
+    #     newhaslo.append(litera)
+    #     print(newhaslo)
+
+
+
+
+
+# for index, litera in enumerate(haslo):
+#     print(f"Indeks: {index}, litera: {litera}")
+
+# slowo = ''
+#
+# for i in range(len(haslo)):
+#     slowo+='-'
+# print(slowo)
+#
+# litera = input('wpisz litere: ')
+# if litera in haslo:
+#     print('tak')
+# else:
+#     print('nie')
 
 
 
