@@ -19,22 +19,36 @@ Podajemy hasło w konsoli, a program wymazuje je z konsoli i zamiast niego wyśw
 
 haslo = 'masło'
 litery = list(haslo)
-print(litery)
+# print(litery)
 newhaslo = []
+liczbaZyc = 5
 
 for i in range(len(haslo)):
     newhaslo.append('-')
 # print(newhaslo)
 print(''.join(newhaslo))
 
-litera = input('wpisz litere: ')
-if litera in haslo:
-    for l in range(len(haslo)):
-        if litera == litery[l]:
-            newhaslo[l] = litera
-            print(''.join(newhaslo))
-else:
-    print('straciłwś życie')
+while litery != newhaslo:
+    litera = input('wpisz litere: ')
+    if litera in haslo:
+        for l in range(len(haslo)):
+            if litera == litery[l]:
+                newhaslo[l] = litera
+                print(''.join(newhaslo))
+
+    else:
+        liczbaZyc -= 1
+        print('straciłeś życie')
+        # print('pozostały tobie %d ' % (liczbaZyc),'życia')
+        print(f'pozostały tobie {liczbaZyc} życia')
+        if liczbaZyc == 0:
+            print('przegrałeś')
+            break
+print('Wygrałeś!')
+
+
+
+
 
 
 
