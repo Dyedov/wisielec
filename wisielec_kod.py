@@ -24,39 +24,17 @@ newhaslo = []
 
 for i in range(len(haslo)):
     newhaslo.append('-')
-print(newhaslo)
+# print(newhaslo)
+print(''.join(newhaslo))
 
 litera = input('wpisz litere: ')
-for l in litery:
-    if litera == l:
-        newhaslo.append(litera)
-        print(newhaslo)
-    else:
-        print('-')
-
-
-
-    #     newhaslo.append(litera)
-    #     print(newhaslo)
-
-
-
-
-
-# for index, litera in enumerate(haslo):
-#     print(f"Indeks: {index}, litera: {litera}")
-
-# slowo = ''
-#
-# for i in range(len(haslo)):
-#     slowo+='-'
-# print(slowo)
-#
-# litera = input('wpisz litere: ')
-# if litera in haslo:
-#     print('tak')
-# else:
-#     print('nie')
+if litera in haslo:
+    for l in range(len(haslo)):
+        if litera == litery[l]:
+            newhaslo[l] = litera
+            print(''.join(newhaslo))
+else:
+    print('straciłwś życie')
 
 
 
