@@ -16,8 +16,11 @@ Program losuje hasło z listy haseł
 WERSJA 3
 Podajemy hasło w konsoli, a program wymazuje je z konsoli i zamiast niego wyświetla -----
 """
+import os
 
-haslo = 'masło'
+haslo = input('Wpisz hasło do odgadnięcia: ').lower()
+os.system("cls")
+
 litery = list(haslo)
 # print(litery)
 newhaslo = []
@@ -34,7 +37,9 @@ while litery != newhaslo:
         for l in range(len(haslo)):
             if litera == litery[l]:
                 newhaslo[l] = litera
-                print(''.join(newhaslo))
+        print(''.join(newhaslo))
+        if litery == newhaslo:
+            print('Wygrałeś!')
 
     else:
         liczbaZyc -= 1
@@ -42,9 +47,10 @@ while litery != newhaslo:
         # print('pozostały tobie %d ' % (liczbaZyc),'życia')
         print(f'pozostały tobie {liczbaZyc} życia')
         if liczbaZyc == 0:
-            print('przegrałeś')
+            print('Przegrałeś')
             break
-print('Wygrałeś!')
+
+
 
 
 
