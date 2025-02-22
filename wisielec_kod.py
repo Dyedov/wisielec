@@ -1,54 +1,47 @@
-"""
-1. musimy podać hasło
-2. musimy to hasło wyświetlić jako -----
-3. musimy odpytywać użytkownika cały czas o litery
-4. musimy zmniejszać życia użytkownika
-5. wyświetlić informacje o wygranej lub przegranej
-
-6. uwzglednij male i duze litery
-
-WERSJA 1
-Ustawiamy hasło w kodzie
-
-WERSJA 2
-Program losuje hasło z listy haseł
-
-WERSJA 3
-Podajemy hasło w konsoli, a program wymazuje je z konsoli i zamiast niego wyświetla -----
-"""
 import os
 
-haslo = input('Wpisz hasło do odgadnięcia: ').lower()
-os.system("cls")
+while True:
+    print('Gra "Zgadni słowo" \nZasady gry: \njedna osoba wpisuje słowo, druga osoba je zgaduje')
+    print('- Start -')
+    haslo = input('Wpisz hasło do odgadnięcia: ').lower()
 
-litery = list(haslo)
-# print(litery)
-newhaslo = []
-liczbaZyc = 5
+    os.system("cls")
 
-for i in range(len(haslo)):
-    newhaslo.append('-')
-# print(newhaslo)
-print(''.join(newhaslo))
+    litery = list(haslo)
+    # print(litery)
+    newhaslo = []
+    liczbaZyc = 5
 
-while litery != newhaslo:
-    litera = input('wpisz litere: ')
-    if litera in haslo:
-        for l in range(len(haslo)):
-            if litera == litery[l]:
-                newhaslo[l] = litera
-        print(''.join(newhaslo))
-        if litery == newhaslo:
-            print('Wygrałeś!')
+    for i in range(len(haslo)):
+        newhaslo.append('-')
+    # print(newhaslo)
+    print(''.join(newhaslo))
 
-    else:
-        liczbaZyc -= 1
-        print('straciłeś życie')
-        # print('pozostały tobie %d ' % (liczbaZyc),'życia')
-        print(f'pozostały tobie {liczbaZyc} życia')
-        if liczbaZyc == 0:
-            print('Przegrałeś')
-            break
+    while litery != newhaslo:
+        litera = input('wpisz litere: ').lower()
+        if litera in haslo:
+            for l in range(len(haslo)):
+                if litera == litery[l]:
+                    newhaslo[l] = litera
+            print(''.join(newhaslo))
+            if litery == newhaslo:
+                print('Wygrałeś!')
+
+        else:
+            liczbaZyc -= 1
+            print('straciłeś życie')
+            # print('pozostały tobie %d ' % (liczbaZyc),'życia')
+            print(f'pozostały tobie {liczbaZyc} życia')
+            if liczbaZyc == 0:
+                print('Przegrałeś')
+                break
+    if input('Czy chcesz zagrać jeszcze raz? tak/nie ').lower() == 'nie':
+        print('Gra zakończona')
+        break
+
+
+
+
 
 
 
