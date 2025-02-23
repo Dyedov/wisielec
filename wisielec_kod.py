@@ -1,7 +1,9 @@
 import os
 
 while True:
-    print('Gra "Zgadni słowo" \nZasady gry: \njedna osoba wpisuje słowo, druga osoba je zgaduje')
+    os.system("cls")
+
+    print('Witaj w grze! "Zgadni słowo" \nZasady gry: \njedna osoba wpisuje słowo, druga osoba je zgaduje')
     print('- Start -')
     haslo = input('Wpisz hasło do odgadnięcia: ').lower()
 
@@ -35,9 +37,10 @@ while True:
             if liczbaZyc == 0:
                 print('Przegrałeś')
                 break
-    if input('Czy chcesz zagrać jeszcze raz? tak/nie ').lower() == 'nie':
+    if input('Czy chcesz zagrać jeszcze raz? tak/nie ').lower() != 'tak':
         print('Gra zakończona')
         break
+
 
 
 
